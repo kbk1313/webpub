@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick slider 02</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+        *{margin:0; padding:0;}
+        li{list-style: none;}
+        img{
+            width:100%;
+        }
+        .hit-slide{
+            width:70%;
+            margin: 0 auto;
+            background:#ffa;
+        } 
+        .hit-slide-wrap{
+            position:relative;
+        }
+        .hit-arrow{
+            position:absolute;
+            top:50%;
+            transform: translateY(-50%);
+        }
+        .hit-prev{
+            left:10%;
+        }
+        .hit-next{
+            right:10%;
+        }
+        .hit-slide li{
+            margin: 10px;
+        }       
+    </style>
+</head>
+<body>
+    <div class="hit-slide-wrap">
+        <div class="hit-arrow hit-prev"><i class="xi-angle-left"></i></div>
+        <div class="hit-arrow hit-next"><i class="xi-angle-right"></i></div>
+
+        <ul class="hit-slide">
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목1<br>
+                    내용
+                </div>  
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목2<br>
+                    내용
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목3<br>
+                    내용                
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목4<br>
+                    내용                
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목5<br>
+                    내용
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목6<br>
+                    내용
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목7<br>
+                    내용
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목8<br>
+                    내용               
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목9<br>
+                    내용              
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목10<br>
+                    내용                
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목11<br>
+                    내용                
+                </div>
+            </li>
+            <li>
+                <img src="img/img_visual21.jpg" alt="">
+                <div class="text">
+                    제목12<br>
+                    내용                
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(".hit-slide").slick({
+            slidesToShow : 5,
+            slidesToScroll : 3,
+            prevArrow : $('.hit-prev'),     
+            nextArrow : $('.hit-next'),     
+        });
+    </script>
+</body>
+</html>

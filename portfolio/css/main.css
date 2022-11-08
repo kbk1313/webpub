@@ -1,0 +1,252 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding:0;}
+
+/* #bgvideo{
+    min-width:100%; 
+    min-height:100vh;
+    position: fixed;
+    width:auto;
+    height:auto;
+    z-index: -999;
+} */
+
+/* body{
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+} */
+/* #wrap{
+    width:600%;
+    display: flex;
+} */
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: block;
+    color:inherit;
+}
+img{
+    display: block;
+}
+section{
+    height:100vh;
+    width:100%;
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#333;
+}
+section:nth-child(even){
+    background:#eee;
+}
+
+#intro .title{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+#intro .title h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#intro .title p{
+    text-align: center;
+}
+
+
+#profile .title{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+section .card{
+    position: absolute;
+    top:379px;
+    left:-250px;
+    opacity: 0;
+    transition: .6s;
+}
+section .mockup{
+    position: absolute;
+    top:50%; right:-200px;
+    opacity: 0;
+    width: 70%;
+    height: 70vh;
+    transition: .6s;
+    transition-delay: .3s;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+section .mockup:after{
+    content:"자세히 보기";
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 75vh;
+    font-style: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 0; left: 0;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    opacity: 0;
+    transition: .3s;
+}
+
+section .mockup:hover:after{
+    content:"자세히 보기";
+    opacity: 1;
+}
+
+#work01 .mockup{
+    background: url(../img/Mockup_1.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+/* .mockup:nth-child(2){
+    background: url(../img/Mockup_2.jpg);
+    background-size: cover;
+    background-position: center center;
+} */
+
+#work02 .mockup{
+    background: url(../img/mockup_4.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+#work03 .mockup{
+    background: url(../img/Mockup_3.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+section:last-child .mockup:hover:after{
+    content:"";
+    opacity: 0;
+}
+
+section:last-child .mockup:after{
+    cursor: default;
+}
+
+section.on .card{
+    position: absolute;
+    top:379px;
+    left:50px;
+    opacity: 1;
+}
+section.on .mockup{
+    position: absolute;
+    top:50%; right:0px;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+/* menu */
+.menu{
+    position: fixed;
+    display: flex;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999999;
+}
+.menu a{
+    width:24px;
+    height:24px;
+    background:#333;
+    border-radius: 12px;
+    margin: 24px;
+    transition: .3s;
+}
+.menu a.on{
+    background:#ffa;
+    outline: 3px solid #333;
+}
+
+nav{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -99999;
+    width: 100%; height: 100vh;
+    background: rgba(0,0,0,0);
+    transition: -6s;
+}
+nav.on{
+    background: rgba(0,0,0,.6);
+    z-index: 99999;
+}
+nav .gnb{
+    width: 150px;
+    position: absolute;
+    top: 50%; right: -200px;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: .6s;
+}
+nav.on .gnb{
+    right: 40px;
+    opacity: 1;
+}
+
+nav .gnb a{
+    line-height: 40px;
+    text-align: center;
+    background: #333;
+    color: #fff ;
+    transition: .3s ;
+}
+nav .gnb a:hover{
+    background: #69f;
+}
+
+.burger{
+    width: 40px; height: 40px; 
+    position: fixed;
+    top: 40px; right: 40px;
+    cursor: pointer;
+    z-index: 9999999999;
+}
+.burger .bar{
+    width: 40px; height: 8px;
+    background: rgb(70, 64, 64);
+    position: absolute;
+    transition: .3s;
+}
+.burger .bar:nth-child(2){
+    top: 16px;
+}
+.burger .bar:nth-child(3){
+    top: 16px;
+}
+.burger .bar:nth-child(4){
+    top: 32px;
+}
+
+.burger.on .bar:nth-child(2){
+    transform: rotate(45deg);
+}
+.burger.on .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+.burger.on .bar:nth-child(1){
+    opacity: 0;
+}
+.burger.on .bar:nth-child(4){
+    opacity: 0;
+}
+
+
+/* #bxslider{
+    width: 70%;
+} */

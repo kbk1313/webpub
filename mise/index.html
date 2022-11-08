@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목포 미세먼지</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <style>
+        *{margin: 0; padding: 0;}
+        #mise{
+            width: 390px; height: 844px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #eee;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #mise > div{
+            outline: 3px #333 solid;
+            border-radius: 20px;
+            padding: 40px;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        .icon{
+            font-size: 10rem;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="mise">
+        <div class="pm25"></div><!-- pm2.5 (초미세먼지) -->
+        <div class="pm10"></div><!-- pm10 (미세먼지) -->
+        
+    </div>
+
+    <script>
+        
+        // mokpo 34.794 126.389
+        // http://api.openweathermap.org/data/2.5/air_pollution?lat=34.794&lon=126.389&appid=494f77806686b14fc2e63cb9e157a923
+        $.getJSON('http://api.openweathermap.org/data/2.5/air_pollution?lat=34.794&lon=126.389&appid=494f77806686b14fc2e63cb9e157a923', miseToday);
+
+        function miseToday(data){
+            console.log(data);
+            let pm25 = (data.list[0].components.pm2_5);
+            let pm10 = (data.list[0].components.pm10);
+            let pm25_text, pm10_text;
+            
+            if(pm25 < 16){
+                pm25_text = "<div class='icon xi-emoticon-smiley-o'></div>";
+                pm25_color = "#2e75b6";
+            }else if(pm25 < 36){
+                pm25_text = "<div class='icon xi-emoticon-neutral-o'></div>";
+                pm25_color = "#70ad47";
+            }else if(pm25 < 76){
+                pm25_text = "<div class='icon xi-emoticon-sad-o'></div>";
+                pm25_color = "#ffc000";
+            }else{
+                pm25_text = "<div class='icon xi-emoticon-devil-o'></div>";
+                pm25_color = "#ed7d31";
+            }
+
+            if(pm10 < 31){
+                pm10_text = "<div class='icon xi-emoticon-smiley-o'></div>";
+                pm10_color = "#2e75b6";
+            }else if(pm10 < 81){
+                pm10_text = "<div class='icon xi-emoticon-neutral-o'></div>";
+                pm10_color = "#70ad47";
+            }else if(pm10 < 151){
+                pm10_text = "<div class='icon xi-emoticon-sad-o'></div>";
+                pm10_color = "#ffc000";
+            }else{
+                pm10_text = "<div class='icon xi-emoticon-devil-o'></div>";
+                pm10_color = "#ed7d31";
+            }
+
+            $(".pm10").html("미세먼지 : "+ pm10 + "<br>" + pm10_text)
+            $(".pm25").html("미세먼지 : "+ pm25 + "<br>" + pm25_text)
+            $('.pm10').css("background", pm10_color);
+            $('.pm25').css("background", pm25_color);
+        }
+    </script>
+</body>
+</html>
